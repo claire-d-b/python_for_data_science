@@ -1,5 +1,4 @@
-def all_thing_is_obj(object):
-#your code here
+def all_thing_is_obj(object: any):
     try:
         if isinstance(object, str):
             print(object + " is in the kitchen : " + str(type(object)))
@@ -8,4 +7,3 @@ def all_thing_is_obj(object):
     except:
         print("Type not found")
     return 42
-
