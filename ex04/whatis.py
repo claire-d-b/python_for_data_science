@@ -14,8 +14,8 @@ def main():
     
     try:
         assert len(args) <= 2, "more than one argument is provided"
-    except:
-        print("AssertionError: more than one argument is provided")
+    except AssertionError as e:
+            print(f"AssertionError: {e}")
     if len(args) <= 2:
         try:
             for args, kwargs in enumerate(kwargs):
@@ -24,8 +24,8 @@ def main():
                     print("I'm odd")
                 else:
                     print("I'm even")
-        except:
-            print("AssertionError: argument is not an integer")
+        except AssertionError as e:
+            print(f"AssertionError: {e}")
 
 if __name__ == "__main__":
     main()
