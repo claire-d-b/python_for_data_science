@@ -1,4 +1,4 @@
-from sys import argv, getsizeof
+from sys import argv
 
 def main():
     args = []
@@ -11,20 +11,22 @@ def main():
         key += 1
     # print(args)
     # print(kwargs)
-    assert getsizeof(args) > 1, "more than one argument is provided"
+    
     try:
-        for args, kwargs in enumerate(kwargs):
-            try:
+        assert len(args) <= 2, "more than one argument is provided"
+    except:
+        print("AssertionError: more than one argument is provided")
+    if len(args) <= 2:
+        try:
+            for args, kwargs in enumerate(kwargs):
+                assert arg.isdigit(), "argument is not an integer"
                 if int(arg) % 2:
                     print("I'm odd")
                 else:
                     print("I'm even")
-            except:
-                print("argument is not an integer")
-    except AssertionError as e:
-        print(f"AssertionError: {e}")
+        except:
+            print("AssertionError: argument is not an integer")
 
 if __name__ == "__main__":
     main()
-
 
