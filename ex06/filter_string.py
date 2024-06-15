@@ -1,6 +1,7 @@
 from ft_filter import filter
 
 def count_chars(chars: any):
+    """     counts occurences of chars """
     try:
         str(chars)
         return True
@@ -8,6 +9,7 @@ def count_chars(chars: any):
         return False
 
 def count_digits(chars: any):
+    """     count occurences of digits """
     try:
         int(chars)
         return True
