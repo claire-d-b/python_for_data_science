@@ -1,7 +1,7 @@
 from sys import argv
 from ft_filter import filter
 
-def count_chars(chars: any):
+def is_chars(chars: any):
     """     counts occurences of chars """
     try:
         str(chars)
@@ -9,7 +9,7 @@ def count_chars(chars: any):
     except ValueError:
         return False
 
-def count_digits(chars: any):
+def is_dogot(chars: any):
     """     count occurences of digits """
     try:
         int(chars)
@@ -30,8 +30,8 @@ def main():
 
     try:
         assert len(args), "the arguments are bad"
-        assert count_chars(args[0]), "the arguments are bad"
-        assert count_digits(args[1]), "the arguments are bad"
+        assert is_chars(args[0]), "the arguments are bad"
+        assert is_dogot(args[1]), "the arguments are bad"
     except AssertionError as e:
             print(f"AssertionError: {e}")
             return
