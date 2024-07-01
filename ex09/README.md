@@ -21,4 +21,12 @@ pip list
 pip install .
 pip show -v ft_package
 
+python ft_package/__init__.py
+
 deactivate
+
+rm -rf ft_package/__pycache__
+rm -rf ft_package.egg-info
+rm -rf build
+rm -rf dist
+rm -rf venv

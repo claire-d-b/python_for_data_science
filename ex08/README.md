@@ -10,6 +10,11 @@ echo alias tqdm='./venv/bin/tqdm' >> venv/bin/activate
 deactivate
 source venv/bin/activate
 
+python src/tester.py
+
 deactivate
+
+rm -rf src/__pycache__
+rm -rf venv
 
 
