@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: mypackage
+Version: 0.1
+Summary: A simple example package
+Home-page: http://example.com/mypackage
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+source ~/.zshrc
+python -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install --upgrade setuptools wheel
+pip install .
+pip list
+pip show -v ft_package
+echo alias python='./venv/bin/python' >> venv/bin/activate
+
+deactivate
+source venv/bin/activate
+
+deactivate
