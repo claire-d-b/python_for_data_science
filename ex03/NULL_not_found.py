@@ -1,4 +1,4 @@
-def NULL_not_found(object : any):
+def NULL_not_found(object: any):
     match str(type(object))[8:-2].capitalize():
         case 'Nonetype':
             print("Nothing: ", object, type(object))

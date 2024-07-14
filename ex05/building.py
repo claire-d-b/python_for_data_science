@@ -1,8 +1,7 @@
 from sys import argv
 
-def main():
-# your tests and your error handling
 
+def main():
     key = 0
     args = []
     kwargs = {}
@@ -20,7 +19,9 @@ def main():
         args.append(arg)
         key += 1
 
-    punctuation = {'.', ',', ';', ':', '!', '?', '\'', '"', '(', ')', '[', ']', '{', '}', '-', '_', '/', '\\', '|', '@', '#', '$', '%', '^', '&', '*', '<', '>', '~', '`'}
+    punctuation = {'.', ',', ';', ':', '!', '?', '\'', '"', '(', ')',
+                   '[', ']', '{', '}', '-', '_', '/', '\\', '|', '@',
+                   '#', '$', '%', '^', '&', '*', '<', '>', '~', '`'}
     """ if multiple args, decompress program args list """
     if len(argv[1:]) > 0:
         print("The text contains " + str(len(*args)) + " characters: ")
@@ -57,6 +58,7 @@ def main():
             if item.isdigit():
                 i += 1
     print(str(i) + " digits")
+
 
 if __name__ == "__main__":
     main()

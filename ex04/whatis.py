@@ -1,5 +1,6 @@
 from sys import argv
 
+
 def main():
     args = []
     kwargs = {}
@@ -10,11 +11,11 @@ def main():
         kwargs[key] = value
         args.append(arg)
         key += 1
-    
+
     try:
         assert len(args) <= 2, "more than one argument is provided"
     except AssertionError as e:
-            print(f"AssertionError: {e}")
+        print(f"AssertionError: {e}")
     if len(args) <= 2:
         """ check whether arg is valid and is an even/odd number """
         try:
@@ -27,6 +28,6 @@ def main():
         except AssertionError as e:
             print(f"AssertionError: {e}")
 
+
 if __name__ == "__main__":
     main()
-

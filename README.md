@@ -6,8 +6,15 @@ pip install --upgrade setuptools wheel
 
 echo alias python='./venv/bin/python' >> venv/bin/activate
 
+pip install tqdm
+
+echo alias tqdm='./venv/bin/tqdm' >> venv/bin/activate
+
 deactivate
 source venv/bin/activate
+
+pip install flake8
+alias norminette=flake8
 
 pip uninstall ft_package
 
