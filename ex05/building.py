@@ -5,7 +5,7 @@ def main():
     key = 0
     args = []
     kwargs = {}
-    """     if there is no command-line arg, prompt for user input """
+    """ if there is no command-line arg, prompt for user input """
     if len(argv[1:]) == 0:
         while True:
             try:
@@ -27,7 +27,7 @@ def main():
         print("The text contains " + str(len(*args)) + " characters: ")
     else:
         print("The text contains " + str(len(args)) + " characters: ")
-    """     count occurences of below char ranges """
+    """ count occurences of below char ranges """
     i = 0
     for arg in args:
         for item in arg:

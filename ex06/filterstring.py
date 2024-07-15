@@ -3,7 +3,7 @@ from ft_filter import filter
 
 
 def is_chars(chars: any):
-    """     counts occurences of chars """
+    """ counts occurences of chars """
     try:
         str(chars)
         return True
@@ -12,7 +12,7 @@ def is_chars(chars: any):
 
 
 def is_dogot(chars: any):
-    """     count occurences of digits """
+    """ count occurences of digits """
     try:
         int(chars)
         return True
