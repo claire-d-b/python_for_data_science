@@ -9,5 +9,4 @@ setup(
     url="https://github.com/eagle/ft_package",
     license="MIT",
     metadata_version="2.1",
-    install_requires=["pip"],
 )
