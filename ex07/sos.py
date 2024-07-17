@@ -40,6 +40,7 @@ NESTED_MORSE = {
     '9': '----.'
 }
 
+
 def main():
     key = 0
     args = []
@@ -55,16 +56,17 @@ def main():
         assert len(args) == 1, "the arguments are bad"
         for arg in args:
             for letter in arg:
-                assert letter.isalnum() == True, "the arguments are bad"
+                assert letter.isalnum(), "the arguments are bad"
     except AssertionError as e:
-            print(f"AssertionError: {e}")
-            return
+        print(f"AssertionError: {e}")
+        return
     for arg in args:
         for letter in arg:
-            if letter.isdigit() == True:
+            if letter.isdigit():
                 print(NESTED_MORSE[arg], end="")
             else:
                 print(NESTED_MORSE[letter.upper()], end="")
+
 
 if __name__ == "__main__":
     main()

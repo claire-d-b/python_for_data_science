@@ -6,8 +6,8 @@ def main():
     args = []
 
     punctuation = {'.', ',', ';', ':', '!', '?', '\'', '"', '(', ')',
-                    '[', ']', '{', '}', '-', '_', '/', '\\', '|', '@',
-                    '#', '$', '%', '^', '&', '*', '<', '>', '~', '`'}
+                   '[', ']', '{', '}', '-', '_', '/', '\\', '|', '@',
+                   '#', '$', '%', '^', '&', '*', '<', '>', '~', '`'}
 
     spaces = {'\t', '\n', '\r', '\v', '\f', ' '}
 
@@ -22,11 +22,10 @@ def main():
                 break
         print("The text contains " + str(len(arg)) + " characters: ")
         args.append(arg)
-    
+
     else:
         """ catches program argument """
         for arg in argv[1:]:
-            value = arg
             args.append(arg)
             key += 1
 
