@@ -29,6 +29,3 @@ def main():
         except AssertionError as e:
             print(f"AssertionError: {e}")
 
-
-if __name__ == "__main__":
-    main()

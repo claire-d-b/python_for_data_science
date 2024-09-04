@@ -13,6 +13,7 @@ def main():
 
     """ if there is no command-line arg, prompt for user input """
     if len(argv[1:]) == 0:
+        arg = ''
         while True:
             try:
                 arg = input()
@@ -28,10 +29,6 @@ def main():
         for arg in argv[1:]:
             args.append(arg)
             key += 1
-
-        """ if multiple args, decompress program args list """
-        if len(argv[1:]) > 0:
-            print("The text contains " + str(len(*args)) + " characters: ")
 
     """ count occurences of below char ranges """
     i = 0
@@ -69,5 +66,14 @@ def main():
 if __name__ == "__main__":
     main()
 
-# What is the text to count?
-# Hello World!
+# In Python, __name__ is a special variable assigned to the name of the Python module
+# by the interpreter. If your module is invoked as a script, then the string ‘__main__’
+# will automatically be assigned to the special variable __name__.
+# But if you import your module into another module, the string ‘my_module’ will be assigned to __name__.
+# When a module is invoked as a string, then Python interpreter will assign the string '__main__'
+# to a special variable called __name__, and the code, which is defined under the condition
+# if __name__ == ‘__main__', will subsequently get executed. 
+# On the other hand, when a module is imported in another module, then the Python interpreter
+# will assign the string with the name of that module to the special variable __name__.
+# This means that in such cases if __name__ == ‘__main__’ will evaluate to False which means that
+# only the code outside of this condition will get executed once imported.

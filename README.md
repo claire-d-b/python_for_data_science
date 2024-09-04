@@ -1,10 +1,10 @@
 source ~/.zshrc
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
 pip install --upgrade setuptools wheel
 
-echo alias python='./venv/bin/python' >> venv/bin/activate
+echo alias python='./venv/bin/python3.10' >> venv/bin/activate
 
 pip install tqdm
 
