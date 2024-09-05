@@ -9,7 +9,21 @@ def main():
                    '[', ']', '{', '}', '-', '_', '/', '\\', '|', '@',
                    '#', '$', '%', '^', '&', '*', '<', '>', '~', '`'}
 
-    spaces = {'\t', '\n', '\r', '\v', '\f', ' '}
+    spaces = {'\t', '\n', '\r', '\v', '\f', ' ', ''}
+
+    try:
+        len(argv[1:]) == 0 or len(argv[1:]) == 1, "Wrong number of arguments"
+    except AssertionError as e:
+        print(f"AssertionError: {e}")
+
+    carriage_ret = 0
+
+
+# CtrlC tells the terminal to send a SIGINT to the current foreground process,
+# which by default translates into terminating the application.
+# CtrlD tells the terminal that it should register a EOF on standard input,
+# which bash interprets as a desire to exit.
+
 
     """ if there is no command-line arg, prompt for user input """
     if len(argv[1:]) == 0:
@@ -18,47 +32,43 @@ def main():
             try:
                 arg = input()
             except EOFError:
+                # EOF reached with ctrl + D
                 break
             except KeyboardInterrupt:
+                # exception raises when ctrl + C
+                # we need to add a space for the carriage return
+                carriage_ret = 1
                 break
-        print("The text contains " + str(len(arg)) + " characters: ")
-        args.append(arg)
-
     else:
         """ catches program argument """
-        for arg in argv[1:]:
-            args.append(arg)
-            key += 1
+        arg = argv[1:]
+    
+    print("The text contains " + str(len(arg) + carriage_ret) + " characters: ")
 
     """ count occurences of below char ranges """
     i = 0
-    for arg in args:
-        for item in arg:
-            if item.isupper():
+    for item in arg:
+        if item.isupper():
                 i += 1
     print(str(i) + " upper letters")
     i = 0
-    for arg in args:
-        for item in arg:
-            if item.islower():
+    for item in arg:
+        if item.islower():
                 i += 1
     print(str(i) + " lower letters")
     i = 0
-    for arg in args:
-        for item in arg:
-            if item in punctuation:
+    for item in arg:
+        if item in punctuation:
                 i += 1
     print(str(i) + " punctuation marks")
     i = 0
-    for arg in args:
-        for item in arg:
-            if item in spaces:
-                i += 1
+    for item in arg:
+        if item in spaces:
+                i += 1 + carriage_ret
     print(str(i) + " spaces")
     i = 0
-    for arg in args:
-        for item in arg:
-            if item.isdigit():
+    for item in arg:
+        if item.isdigit():
                 i += 1
     print(str(i) + " digits")
 

@@ -12,5 +12,10 @@ def ft_tqdm(lst: range) -> None:
     - Useful for memory-efficient, stateful iteration over large
     or infinite sequences. """
     i = 0
-    for i in tqdm(lst, total=len(lst), leave=True, unit='it'):
+    for i in tqdm(lst, total=len(lst)):
         yield
+    # iterable, total or nb of expected iterations,
+    # leave : [default: True], keeps all traces of the
+    # progressbar upon termination of iteration. If None,
+    # will leave only if position is 0.
+    # unit=it by default
