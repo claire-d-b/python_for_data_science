@@ -7,7 +7,7 @@ def NULL_not_found(object: any):
             if object != object:
                 print("Cheese: ", object, type(object))
                 return 0
-            elif object is 0:
+            elif object == 0:
                 print("Zero: ", object, type(object))
                 return 0
             else:

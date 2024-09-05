@@ -23,7 +23,11 @@ def main():
 # which by default translates into terminating the application.
 # CtrlD tells the terminal that it should register a EOF on standard input,
 # which bash interprets as a desire to exit.
-
+# EOF is not a character (in most modern operating systems).
+# It is simply a condition that applies to a file stream when the end of the stream is reached.
+# The confusion arises because a user may signal EOF for console input by typing
+# a special character (e.g Control-D in Unix, Linux, et al), but this character is not seen
+# by the running program, it is caught by the operating system which in turn signals EOF to the process.
 
     """ if there is no command-line arg, prompt for user input """
     if len(argv[1:]) == 0:
@@ -33,11 +37,11 @@ def main():
                 arg = input()
             except EOFError:
                 # EOF reached with ctrl + D
+                # we need to add a space for the carriage return
+                carriage_ret = 1
                 break
             except KeyboardInterrupt:
                 # exception raises when ctrl + C
-                # we need to add a space for the carriage return
-                carriage_ret = 1
                 break
     else:
         """ catches program argument """
