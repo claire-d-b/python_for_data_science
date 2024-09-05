@@ -2,12 +2,12 @@ def all_thing_is_obj(object: any) -> int:
     if isinstance(object, str):
         print(object + " is in the kitchen : " + str(type(object)))
     try:
-        iterator = iter(object)
+        iter(object)
     except TypeError:
-        print("Type not found") # is not iterable
+        print("Type not found")     # is not iterable
     else:
         print(str(type(object))[8:-2].capitalize() + " : "
-                  + str(type(object)))
+              + str(type(object)))
     finally:
         return 42
 

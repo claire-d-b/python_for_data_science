@@ -28,4 +28,3 @@ def main():
                     print("I'm Even")
         except AssertionError as e:
             print(f"AssertionError: {e}")
-

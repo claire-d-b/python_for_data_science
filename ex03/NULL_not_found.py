@@ -30,6 +30,4 @@ def NULL_not_found(object: any):
 # You can combine several literals in a single pattern using | (“or”):
 
 # Ex: case 401 | 403 | 404:
-#     return "Not allowed"
-
-
+# return "Not allowed"
